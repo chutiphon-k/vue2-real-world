@@ -1,1 +1,1 @@
-# Vue2-Real-World
+# Vue2-Real-World-Course
