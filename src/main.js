@@ -1,33 +1,25 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import Home from './components/Home'
-import Profile from './components/Profile'
-import About from './components/About'
-import VueRouter from 'vue-router'
 
-import '!script!jquery'
+import router from './router'
+import firebase from 'firebase'
+
+import '!script!jquery/dist/jquery.min.js'
 import '!script!semantic-ui-css/semantic.min.js'
 import '!style!css!semantic-ui-css/semantic.min.css'
 
-Vue.use(VueRouter)
+  const config = {
+    apiKey: "AIzaSyAzcEEZOrdHe5OamHy9T59QpGgxk-poVb4",
+    authDomain: "twisser-5cc2d.firebaseapp.com",
+    databaseURL: "https://twisser-5cc2d.firebaseio.com",
+    storageBucket: "twisser-5cc2d.appspot.com",
+    messagingSenderId: "666599122913"
+  }
 
-const router = new VueRouter({
-  mode: 'history',
-  routes: [
-    { path: '/', component: Home },
-    { path: '/profile/:name', component: Profile },
-    { path: '/about', component: About },
-    { path: '*', redirect: '/' }
-  ]
-})
+  firebase.initializeApp(config)
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  render (h) {
-    return h(App)
-  }
+  ...App
 })
