@@ -18,6 +18,13 @@ import '!style!css!semantic-ui-css/semantic.min.css'
 
   firebase.initializeApp(config)
 
+  Vue.filter('upper', (value) => {
+    if(typeof value === 'string') {
+      return value.toUpperCase()
+    }
+    return value
+  })
+
 new Vue({
   el: '#app',
   router,
