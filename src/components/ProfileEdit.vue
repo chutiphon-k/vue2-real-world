@@ -2,7 +2,6 @@
 	<div class='ui segment'>
 		<h3 class='ui header'>Edit Profile</h3>
 		<ProfileForm v-model='profile' @save='saveProfile' @cancel='back' />
-		{{ profile }}
 	</div>
 </template>
 
