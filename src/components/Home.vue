@@ -8,9 +8,9 @@
 				<button class="ui blue button" :class="{'loading disabled': posting}">Post</button>
 			</form>
 		</div>
-		<div v-for='tweet in tweets' class='ui segment'>
-			<img class='ui tiny circular image' v-if='findUserPhoto(tweet.owner)' :src='findUserPhoto(tweet.owner)'>
-			{{ findUserName(tweet.owner) }} <br>
+		<div v-for='tweet in list' class='ui segment'>
+			<img class='ui tiny circular image' v-if='tweet.user' :src='tweet.user.photo'>
+			<div v-if='tweet.user'>{{ tweet.user.name }}</div>
 			{{ tweet.content }} ({{ tweet.timestamp | fromNow }})
 		</div>
 	</div>
@@ -32,6 +32,10 @@
 			})
 			User.list((list) => {
 				this.users = list
+				this.users = list.reduce((p, v, k) => {
+					p[v.$id] = v
+					return p
+				}, {})
 			})
 		},
 		methods: {
@@ -42,14 +46,16 @@
 						this.input = ''
 						this.posting = false
 					})
-			},
-			findUserName (id) {
-				const x = this.users.find((it) => it.$id === id)
-				return x ? x.name : ''
-			},
-			findUserPhoto (id) {
-				const x = this.users.find((it) => it.$id === id)
-				return x ? x.photo : ''
+			}
+		},
+		computed: {
+			list () {
+				return this.tweets.map((tweet) => {
+					return {
+						...tweet,
+						user: this.users[tweet.owner]
+					}
+				})
 			}
 		}
 	}
