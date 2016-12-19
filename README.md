@@ -1,6 +1,6 @@
-# Vue2 Real World Course [Demo](https://twisser-5cc2d.firebaseapp.com)
+# Vue2 Real World Course
 
-> A Vue.js project
+> A Vue.js project [Demo](https://twisser-5cc2d.firebaseapp.com)
 
 ## Build Setup
 
@@ -40,6 +40,9 @@ docker stop [CONTAINER ID]
 #remove docker container
 docker ps --all
 docker rm [CONTAINER ID]
+
+#web interface
+[http://localhost:8080](http://localhost:8080)
 ```
 
 ## Firebase Setup
@@ -54,6 +57,8 @@ firebase init
 # deploy firebase server
 firebase deploy
 
+#web interface
+[https://twisser-5cc2d.firebaseapp.com](https://twisser-5cc2d.firebaseapp.com)
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
