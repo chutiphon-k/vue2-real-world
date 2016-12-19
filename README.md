@@ -1,4 +1,4 @@
-# vue2
+# Vue2 Real World Course [Demo](https://twisser-5cc2d.firebaseapp.com)
 
 > A Vue.js project
 
@@ -22,6 +22,38 @@ npm run e2e
 
 # run all tests
 npm test
+```
+
+## Docker Setup
+
+``` bash
+# setup docker container
+docker build -t twisser .
+
+#start docker container
+docker run -d -p 8080:80 twisser
+
+#stop docker container
+docker ps --all
+docker stop [CONTAINER ID]
+
+#remove docker container
+docker ps --all
+docker rm [CONTAINER ID]
+```
+
+## Firebase Setup
+
+``` bash
+# install global dependencies
+npm install -g firebase-tools
+
+# initializing firebase
+firebase init
+
+# deploy firebase server
+firebase deploy
+
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
