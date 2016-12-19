@@ -42,7 +42,7 @@ docker ps --all
 docker rm [CONTAINER ID]
 
 #web interface
-[http://localhost:8080](http://localhost:8080)
+open url http://localhost:8080
 ```
 
 ## Firebase Setup
@@ -58,7 +58,7 @@ firebase init
 firebase deploy
 
 #web interface
-[https://twisser-5cc2d.firebaseapp.com](https://twisser-5cc2d.firebaseapp.com)
+open url https://twisser-5cc2d.firebaseapp.com
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
